@@ -35,7 +35,7 @@ services:
       - ./.env
     restart: unless-stopped
     volumes:
-      - postgres_data:/data/postgres
+      - postgres_data:${PGDATA}
     networks:
       - backend
 
