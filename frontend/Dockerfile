@@ -1,7 +1,7 @@
 FROM node:16-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm i  --legacy-peer-deps --no-audit --no-fund
+RUN npm ci --no-audit --no-fund
 COPY . ./
 RUN npm run build
 
