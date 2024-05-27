@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { GoodCard } from "../good-card";
@@ -20,7 +20,7 @@ export const Collection = ({ extraClass = "" }) => {
     getCollection(id)
       .then((res) => setData(res))
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
 
   return (
     <div className={`${styles.content} ${extraClass}`}>

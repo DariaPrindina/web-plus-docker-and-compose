@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Route, useRouteMatch, useLocation, Redirect } from "react-router-dom";
 
 import { Collection } from "../collection";

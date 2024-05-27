@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 
 import { Input, Button, Textarea } from "../ui";
@@ -46,7 +46,7 @@ export const SignUp = ({ extraClass = "" }) => {
 
     setStepOneDisabled(!usernameValid || !passwordValid || !emailValid);
     setStepTwoDisabled(!descriptionValid || !avatarValid);
-  }, [step, userData]);
+  }, [errorMessage, step, userData]);
 
   const onChangeInput = (e) => {
     const name = e.target.name;
@@ -83,7 +83,6 @@ export const SignUp = ({ extraClass = "" }) => {
         );
         if (access_token) {
           const userDto = await getOwnUser();
-          console.log(userDto);
 
           if (userDto.id) {
             setUser({ ...userDto });
